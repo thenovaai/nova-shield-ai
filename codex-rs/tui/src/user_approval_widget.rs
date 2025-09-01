@@ -145,7 +145,7 @@ impl UserApprovalWidget {
             } => {
                 let cmd = strip_bash_lc_and_escape(command);
                 let mut contents: Vec<Line> = to_command_display(
-                    vec!["? ".fg(Color::Cyan), "Codex wants to run ".bold()],
+                    vec!["? ".fg(Color::Cyan), "Nova wants to run ".bold()],
                     cmd,
                     vec![],
                 );
@@ -273,7 +273,7 @@ impl UserApprovalWidget {
                                 "✔ ".fg(Color::Green),
                                 "You ".into(),
                                 "approved".bold(),
-                                " codex to run ".into(),
+                                " nova to run ".into(),
                             ],
                             cmd,
                             vec![" this time".bold()],
@@ -285,7 +285,7 @@ impl UserApprovalWidget {
                                 "✔ ".fg(Color::Green),
                                 "You ".into(),
                                 "approved".bold(),
-                                " codex to run ".into(),
+                                " nova to run ".into(),
                             ],
                             cmd,
                             vec![" every time this session".bold()],
@@ -297,7 +297,7 @@ impl UserApprovalWidget {
                                 "✗ ".fg(Color::Red),
                                 "You ".into(),
                                 "did not approve".bold(),
-                                " codex to run ".into(),
+                                " nova to run ".into(),
                             ],
                             cmd,
                             vec![],

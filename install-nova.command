@@ -12,7 +12,7 @@ cd ~
 
 # Download and run the installer
 echo "📥 Downloading Nova Shield installer..."
-curl -fsSL https://raw.githubusercontent.com/ceobitch/codex/main/install-nova.sh | bash
+curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield/main/install-nova.sh | bash
 
 echo ""
 echo "✅ Installation complete!"

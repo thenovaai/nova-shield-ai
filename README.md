@@ -12,7 +12,7 @@
 ### 💻 **Command Line Installation (For Developers)**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ceobitch/codex/main/install-nova.sh | bash
+curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield/main/install-nova.sh | bash
 ```
 
 **✨ Zero Setup Required** - Automatically installs everything needed
@@ -47,7 +47,7 @@ Nova is your AI cybersecurity expert who:
 ## 🔧 Development
 
 ```bash
-git clone https://github.com/ceobitch/codex.git
+git clone https://github.com/thenovaai/nova-shield.git
 cd codex/codex-rs
 cargo run -p codex-tui
 ```

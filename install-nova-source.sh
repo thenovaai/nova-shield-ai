@@ -2,9 +2,9 @@
 set -euo pipefail
 
 # Nova Shield - Source Build Installer (Fallback)
-# Usage: curl -fsSL https://raw.githubusercontent.com/ceobitch/codex/main/install-nova-source.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield/main/install-nova-source.sh | bash
 
-REPO_URL="https://github.com/ceobitch/codex.git"
+REPO_URL="https://github.com/thenovaai/nova-shield.git"
 INSTALL_DIR="$HOME/.nova-shield"
 NODE_MIN_VERSION="20"
 
@@ -137,7 +137,7 @@ if [[ "$1" == "update" ]]; then
         fi
     else
         echo "❌ Not a git repository"
-        echo "💡 Try reinstalling: curl -fsSL https://raw.githubusercontent.com/ceobitch/codex/main/install-nova.sh | bash"
+        echo "💡 Try reinstalling: curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield/main/install-nova.sh | bash"
         exit 1
     fi
 else

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nova Shield - Uninstaller
-# Usage: curl -fsSL https://raw.githubusercontent.com/ceobitch/codex/main/uninstall-nova.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield/main/uninstall-nova.sh | bash
 
 echo "🛡️ Uninstalling Nova Shield..."
 echo "=============================="
@@ -27,4 +27,4 @@ echo ""
 echo "🎉 Nova Shield uninstalled successfully!"
 echo ""
 echo "💡 To reinstall, run:"
-echo "   curl -fsSL https://raw.githubusercontent.com/ceobitch/codex/main/install-nova.sh | bash"
+echo "   curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield/main/install-nova.sh | bash"

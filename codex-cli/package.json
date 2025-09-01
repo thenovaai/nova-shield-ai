@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ceobitch/codex.git"
+    "url": "git+https://github.com/thenovaai/nova-shield.git"
   },
   "keywords": [
     "cybersecurity", 
@@ -29,9 +29,9 @@
     "threat-detection"
   ],
   "author": "Nova Shield Team",
-  "homepage": "https://github.com/ceobitch/codex#readme",
+  "homepage": "https://github.com/thenovaai/codex#readme",
   "bugs": {
-    "url": "https://github.com/ceobitch/codex/issues"
+    "url": "https://github.com/thenovaai/codex/issues"
   },
   "dependencies": {},
   "devDependencies": {

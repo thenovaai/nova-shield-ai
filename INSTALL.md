@@ -17,14 +17,14 @@
 ## 💻 **Command Line Installation (For Developers)**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ceobitch/codex/main/install-nova.sh | bash
+curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield/main/install-nova.sh | bash
 ```
 
 ## 🗑️ **Uninstall Nova Shield**
 
 ### **Command Line:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ceobitch/codex/main/uninstall-nova.sh | bash
+curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield/main/uninstall-nova.sh | bash
 ```
 
 ### **Click to Uninstall:**

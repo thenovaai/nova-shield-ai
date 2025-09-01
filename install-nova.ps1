@@ -10,7 +10,7 @@ Write-Host ""
 
 try {
     # Download the installer script
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ceobitch/codex/main/install-nova.sh" -OutFile "install-nova.sh"
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thenovaai/nova-shield/main/install-nova.sh" -OutFile "install-nova.sh"
     
     Write-Host "✅ Download complete!" -ForegroundColor Green
     Write-Host ""

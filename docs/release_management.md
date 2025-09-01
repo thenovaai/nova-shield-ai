@@ -2,13 +2,13 @@
 
 Currently, we made Codex binaries available in three places:
 
-- GitHub Releases https://github.com/openai/codex/releases/
+- GitHub Releases https://github.com/openai/nova-shield/releases/
 - `@openai/codex` on npm: https://www.npmjs.com/package/@openai/codex
 - `codex` on Homebrew: https://formulae.brew.sh/formula/codex
 
 # Cutting a Release
 
-Currently, choosing the version number for the next release is a manual process. In general, just go to https://github.com/openai/codex/releases/latest and see what the latest release is and increase the minor version by `1`, so if the current release is `0.20.0`, then the next release should be `0.21.0`.
+Currently, choosing the version number for the next release is a manual process. In general, just go to https://github.com/openai/nova-shield/releases/latest and see what the latest release is and increase the minor version by `1`, so if the current release is `0.20.0`, then the next release should be `0.21.0`.
 
 Assuming you are trying to publish `0.21.0`, first you would run:
 

@@ -62,9 +62,9 @@ configure_path() {
     
     # Determine shell configuration file
     SHELL_CONFIG=""
-    if [[ -n "$ZSH_VERSION" ]]; then
+    if [[ -n "${ZSH_VERSION:-}" ]]; then
         SHELL_CONFIG="$HOME/.zshrc"
-    elif [[ -n "$BASH_VERSION" ]]; then
+    elif [[ -n "${BASH_VERSION:-}" ]]; then
         SHELL_CONFIG="$HOME/.bashrc"
         if [[ ! -f "$SHELL_CONFIG" ]]; then
             SHELL_CONFIG="$HOME/.bash_profile"

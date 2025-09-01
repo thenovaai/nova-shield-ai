@@ -1,0 +1,44 @@
+{
+  "name": "nova-shield",
+  "version": "1.0.0",
+  "description": "Nova Shield - AI Cybersecurity Expert",
+  "license": "Apache-2.0",
+  "bin": {
+    "nova": "bin/nova"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "bin",
+    "../sound"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceobitch/codex.git"
+  },
+  "keywords": [
+    "cybersecurity", 
+    "malware",
+    "security",
+    "ai",
+    "terminal",
+    "cli",
+    "nova",
+    "threat-detection"
+  ],
+  "author": "Nova Shield Team",
+  "homepage": "https://github.com/ceobitch/codex#readme",
+  "bugs": {
+    "url": "https://github.com/ceobitch/codex/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  },
+  "scripts": {
+    "postinstall": "echo '🛡️ Nova Shield installed successfully! Run: nova'",
+    "uninstall": "node -e \"const fs=require('fs');const path=require('path');const home=require('os').homedir();const novaDir=path.join(home,'.nova-shield');if(fs.existsSync(novaDir)){fs.rmSync(novaDir,{recursive:true,force:true});console.log('✅ Nova Shield files removed');}else{console.log('❌ Nova Shield not found');}\""
+  }
+}

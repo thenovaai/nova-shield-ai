@@ -1,0 +1,5 @@
+#!/bin/bash
+cd "$(dirname "$0")/codex-rs"
+
+# Run Nova Shield directly - no frozen spinner
+cargo run -p codex-tui

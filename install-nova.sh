@@ -237,6 +237,7 @@ install_rust() {
 
 # Install npm package
 install_npm_package() {
+    configure_path
     echo "📦 Installing npm package..."
     
     # Create minimal package.json for the binary
@@ -261,12 +262,52 @@ EOF
     
     cd "$INSTALL_DIR/codex-cli"
     npm install -g .
+}
+
+# Configure PATH automatically
+configure_path() {
+    echo "🔧 Configuring PATH automatically..."
+    
+    # Determine shell configuration file
+    SHELL_CONFIG=""
+    if [[ -n "$ZSH_VERSION" ]]; then
+        SHELL_CONFIG="$HOME/.zshrc"
+    elif [[ -n "$BASH_VERSION" ]]; then
+        SHELL_CONFIG="$HOME/.bashrc"
+        if [[ ! -f "$SHELL_CONFIG" ]]; then
+            SHELL_CONFIG="$HOME/.bash_profile"
+        fi
+    else
+        SHELL_CONFIG="$HOME/.profile"
+    fi
+    
+    # Create shell config if it doesn't exist
+    if [[ ! -f "$SHELL_CONFIG" ]]; then
+        touch "$SHELL_CONFIG"
+    fi
+    
+    # Add PATH if not already present
+    if ! grep -q "nova-shield" "$SHELL_CONFIG" 2>/dev/null; then
+        echo "" >> "$SHELL_CONFIG"
+        echo "# Nova Shield PATH" >> "$SHELL_CONFIG"
+        echo "export PATH="\$PATH:$INSTALL_DIR/codex-cli/bin"" >> "$SHELL_CONFIG"
+        echo "✅ Added Nova Shield to PATH in $SHELL_CONFIG"
+    else
+        echo "✅ Nova Shield PATH already configured"
+    fi
+    
+    # Add to current session PATH
+    export PATH="$PATH:$INSTALL_DIR/codex-cli/bin"
+    echo "✅ PATH updated for current session"
     echo "✅ npm package installed"
 }
 
 # Verify installation
 verify() {
     echo "🧪 Verifying installation..."
+    
+    # Add to PATH for verification
+    export PATH="$PATH:$INSTALL_DIR/codex-cli/bin"
     
     if command -v nova &> /dev/null; then
         echo "✅ Nova command available"
@@ -300,6 +341,7 @@ main() {
     fi
     
     install_npm_package
+    configure_path
     verify
     
     echo ""

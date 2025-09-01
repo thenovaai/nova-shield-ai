@@ -1307,12 +1307,12 @@ impl WidgetRef for &ChatWidget {
 }
 
 const EXAMPLE_PROMPTS: [&str; 6] = [
-    "Explain this codebase",
-    "Summarize recent commits",
-    "Implement {feature}",
-    "Find and fix a bug in @filename",
-    "Write tests for @filename",
-    "Improve documentation in @filename",
+    "Analyze malware behavior in @filename",
+    "Check for suspicious network connections",
+    "Review firewall rules and permissions",
+    "Scan for security vulnerabilities",
+    "Detect and remove malicious code",
+    "Audit system security configuration",
 ];
 
 fn add_token_usage(current_usage: &TokenUsage, new_usage: &TokenUsage) -> TokenUsage {

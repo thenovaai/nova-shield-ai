@@ -415,7 +415,7 @@ mod tests {
     fn append_markdown_preserves_full_text_line() {
         use codex_core::config_types::UriBasedFileOpener;
         use std::path::Path;
-        let src = "Hi! How can I help with codex-rs today? Want me to explore the repo, run tests, or work on a specific change?\n";
+        let src = "Hi! How can I help with Nova Shield today? Want me to scan for vulnerabilities, analyze malware, or secure your system?\n";
         let cwd = Path::new("/");
         let mut out = Vec::new();
         append_markdown_with_opener_and_cwd(src, &mut out, UriBasedFileOpener::None, cwd);
@@ -432,7 +432,7 @@ mod tests {
             .join("");
         assert_eq!(
             rendered,
-            "Hi! How can I help with codex-rs today? Want me to explore the repo, run tests, or work on a specific change?"
+            "Hi! How can I help with Nova Shield today? Want me to scan for vulnerabilities, analyze malware, or secure your system?"
         );
     }
 

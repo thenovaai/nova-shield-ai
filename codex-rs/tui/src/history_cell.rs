@@ -736,7 +736,7 @@ pub(crate) fn new_status_output(
         match auth.openai_api_key.as_deref() {
             Some(key) if !key.is_empty() => {
                 lines.push(Line::from(
-                    "  • Using API key. Run codex login to use ChatGPT plan",
+                    "  • Using API key. Run nova login to use ChatGPT plan",
                 ));
             }
             _ => {

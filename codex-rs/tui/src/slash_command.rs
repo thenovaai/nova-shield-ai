@@ -32,16 +32,16 @@ impl SlashCommand {
     pub fn description(self) -> &'static str {
         match self {
             SlashCommand::New => "start a new chat during a conversation",
-            SlashCommand::Init => "create an AGENTS.md file with instructions for Codex",
+            SlashCommand::Init => "create an AGENTS.md file with instructions for Nova Shield",
             SlashCommand::Compact => "summarize conversation to prevent hitting the context limit",
-            SlashCommand::Quit => "exit Codex",
+            SlashCommand::Quit => "exit Nova Shield",
             SlashCommand::Diff => "show git diff (including untracked files)",
             SlashCommand::Mention => "mention a file",
             SlashCommand::Status => "show current session configuration and token usage",
             SlashCommand::Model => "choose what model and reasoning effort to use",
-            SlashCommand::Approvals => "choose what Codex can do without approval",
+            SlashCommand::Approvals => "choose what Nova Shield can do without approval",
             SlashCommand::Mcp => "list configured MCP tools",
-            SlashCommand::Logout => "log out of Codex",
+            SlashCommand::Logout => "log out of Nova Shield",
             #[cfg(debug_assertions)]
             SlashCommand::TestApproval => "test approval request",
         }

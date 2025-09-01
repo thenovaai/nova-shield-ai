@@ -160,7 +160,7 @@ impl ChatWidget {
             event,
             self.show_welcome_banner,
         ));
-        // Ask codex-core to enumerate custom prompts for this session.
+        // Ask nova-core to enumerate custom prompts for this session.
         self.submit_op(Op::ListCustomPrompts);
         if let Some(user_message) = self.initial_user_message.take() {
             self.submit_user_message(user_message);
@@ -1237,7 +1237,7 @@ impl ChatWidget {
     pub(crate) fn clear_esc_backtrack_hint(&mut self) {
         self.bottom_pane.clear_esc_backtrack_hint();
     }
-    /// Forward an `Op` directly to codex.
+    /// Forward an .Op. directly to nova.
     pub(crate) fn submit_op(&self, op: Op) {
         // Record outbound operation for session replay fidelity.
         crate::session_log::log_outbound_op(&op);

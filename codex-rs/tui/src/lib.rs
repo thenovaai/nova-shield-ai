@@ -217,7 +217,7 @@ pub async fn run_main(
         log_file_opts.mode(0o600);
     }
 
-    let log_file = log_file_opts.open(log_dir.join("codex-tui.log"))?;
+    let log_file = log_file_opts.open(log_dir.join("nova-tui.log"))?;
 
     // Wrap file in non‑blocking writer.
     let (non_blocking, _guard) = non_blocking(log_file);
@@ -289,7 +289,7 @@ async fn run_ratatui_app(
         ]));
 
         if managed_by_npm {
-            let npm_cmd = "npm install -g @openai/codex@latest";
+            let npm_cmd = "npm install -g @thenovaai/nova-shield@latest";
             lines.push(Line::from(vec![
                 Span::raw("Run "),
                 npm_cmd.cyan(),
@@ -298,7 +298,7 @@ async fn run_ratatui_app(
         } else if cfg!(target_os = "macos")
             && (exe.starts_with("/opt/homebrew") || exe.starts_with("/usr/local"))
         {
-            let brew_cmd = "brew upgrade codex";
+            let brew_cmd = "brew upgrade nova-shield";
             lines.push(Line::from(vec![
                 Span::raw("Run "),
                 brew_cmd.cyan(),
@@ -307,7 +307,7 @@ async fn run_ratatui_app(
         } else {
             lines.push(Line::from(vec![
                 Span::raw("See "),
-                "https://github.com/openai/codex/releases/latest".cyan(),
+                "https://github.com/thenovaai/nova-shield-ai/releases/latest".cyan(),
                 Span::raw(" for the latest releases and installation options."),
             ]));
         }

@@ -88,7 +88,7 @@ fn final_answer_without_newline_is_flushed_immediately() {
     chat.handle_codex_event(Event {
         id: "sub-a".into(),
         msg: EventMsg::AgentMessageDelta(AgentMessageDeltaEvent {
-            delta: "Hi! How can I help with codex-rs or anything else today?".into(),
+            delta: "Hi! How can I help with Nova Shield or anything else today?".into(),
         }),
     });
 
@@ -96,7 +96,7 @@ fn final_answer_without_newline_is_flushed_immediately() {
     chat.handle_codex_event(Event {
         id: "sub-a".into(),
         msg: EventMsg::AgentMessage(AgentMessageEvent {
-            message: "Hi! How can I help with codex-rs or anything else today?".into(),
+            message: "Hi! How can I help with Nova Shield or anything else today?".into(),
         }),
     });
 
@@ -111,7 +111,7 @@ fn final_answer_without_newline_is_flushed_immediately() {
                 .collect::<String>();
             s.contains("codex")
         }),
-        "expected 'codex' header to be emitted",
+        "expected .nova. header to be emitted",
     );
     let found_final = cells.iter().any(|lines| {
         let s = lines
@@ -119,7 +119,7 @@ fn final_answer_without_newline_is_flushed_immediately() {
             .flat_map(|l| l.spans.iter())
             .map(|sp| sp.content.clone())
             .collect::<String>();
-        s.contains("Hi! How can I help with codex-rs or anything else today?")
+        s.contains("Hi! How can I help with Nova Shield or anything else today?")
     });
     assert!(
         found_final,
@@ -1076,7 +1076,7 @@ fn apply_patch_full_flow_integration_like() {
     chat.submit_op(op);
     let forwarded = op_rx
         .try_recv()
-        .expect("expected op forwarded to codex channel");
+        .expect("expected op forwarded to nova channel");
     match forwarded {
         Op::PatchApproval { id, decision } => {
             assert_eq!(id, "sub-xyz");
@@ -1279,7 +1279,7 @@ fn headers_emitted_on_stream_begin_for_answer_and_not_for_reasoning() {
                 .map(|sp| sp.content.clone())
                 .collect::<Vec<_>>()
                 .join("");
-            if s.contains("codex") {
+            if s.contains("nova") {
                 saw_codex_pre = true;
                 break;
             }
@@ -1307,7 +1307,7 @@ fn headers_emitted_on_stream_begin_for_answer_and_not_for_reasoning() {
                 .map(|sp| sp.content.clone())
                 .collect::<Vec<_>>()
                 .join("");
-            if s.contains("codex") {
+            if s.contains("nova") {
                 saw_codex_post = true;
                 break;
             }
@@ -1315,7 +1315,7 @@ fn headers_emitted_on_stream_begin_for_answer_and_not_for_reasoning() {
     }
     assert!(
         saw_codex_post,
-        "expected 'codex' header to be emitted after first newline commit"
+        "expected .nova. header to be emitted after first newline commit"
     );
 
     // Reasoning: do NOT emit a history header; status text is updated instead
@@ -1390,7 +1390,7 @@ fn multiple_agent_messages_in_single_turn_emit_multiple_headers() {
         for l in lines {
             for sp in &l.spans {
                 let s = &sp.content;
-                if s == "codex" {
+                if s == "nova" {
                     header_count += 1;
                 }
                 combined.push_str(s);
@@ -1401,7 +1401,7 @@ fn multiple_agent_messages_in_single_turn_emit_multiple_headers() {
     assert_eq!(
         header_count,
         2,
-        "expected two 'codex' headers for two AgentMessage events in one turn; cells={:?}",
+        "expected two .nova. headers for two AgentMessage events in one turn; cells={:?}",
         cells.len()
     );
     assert!(

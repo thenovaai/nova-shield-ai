@@ -825,7 +825,7 @@ pub(crate) fn empty_mcp_output() -> PlainHistoryCell {
         Line::from(vec![
             "    See the ".into(),
             Span::styled(
-                "\u{1b}]8;;https://github.com/openai/codex/blob/main/codex-rs/config.md#mcp_servers\u{7}MCP docs\u{1b}]8;;\u{7}",
+                "\u{1b}]8;;https://github.com/thenovaai/nova-shield-ai/blob/main/codex-rs/config.md#mcp_servers\u{7}MCP docs\u{1b}]8;;\u{7}",
                 Style::default().add_modifier(Modifier::UNDERLINED),
             ),
             " to configure them.".into(),

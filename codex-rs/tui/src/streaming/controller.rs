@@ -350,7 +350,7 @@ mod tests {
         // Finalize and flush remaining lines now.
         let _ = ctrl.finalize(true, &sink);
 
-        // Flatten sink output and strip the header that the controller inserts (blank + "codex").
+        // Flatten sink output and strip the header that the controller inserts (blank + "nova").
         let mut flat: Vec<ratatui::text::Line<'static>> = Vec::new();
         for batch in sink.lines.borrow().iter() {
             for l in batch {
@@ -363,7 +363,7 @@ mod tests {
         }
         if !flat.is_empty() {
             let s0 = lines_to_plain_strings(&[flat[0].clone()])[0].clone();
-            if s0 == "codex" {
+            if s0 == "nova" {
                 flat.remove(0);
             }
         }

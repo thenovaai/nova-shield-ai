@@ -265,7 +265,7 @@ impl AuthModeWidget {
             Line::from(vec![
                 Span::raw("  For more details see the "),
                 Span::styled(
-                    "\u{1b}]8;;https://github.com/openai/codex\u{7}Codex docs\u{1b}]8;;\u{7}",
+                    "\u{1b}]8;;https://github.com/openai/codex\u{7}Nova Shield docs\u{1b}]8;;\u{7}",
                     Style::default().add_modifier(Modifier::UNDERLINED),
                 ),
             ])

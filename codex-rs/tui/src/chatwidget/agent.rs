@@ -30,7 +30,7 @@ pub(crate) fn spawn_agent(
             Ok(v) => v,
             Err(e) => {
                 // TODO: surface this error to the user.
-                tracing::error!("failed to initialize codex: {e}");
+                tracing::error!("failed to initialize nova: {e}");
                 return;
             }
         };

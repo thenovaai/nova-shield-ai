@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Nova Shield - Super Simple Installer for Everyone
-# Usage: curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield/main/install-nova.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/thenovaai/nova-shield-ai/main/install-nova.sh | bash
 
 INSTALL_DIR="$HOME/.nova-shield"
 NODE_MIN_VERSION="20"
@@ -112,7 +112,7 @@ cleanup() {
 download_binary() {
     PLATFORM=$(detect_platform)
     BINARY_NAME="nova-${PLATFORM}"
-    DOWNLOAD_URL="https://github.com/thenovaai/nova-shield/releases/latest/download/${BINARY_NAME}"
+    DOWNLOAD_URL="https://github.com/thenovaai/nova-shield-ai/releases/latest/download/${BINARY_NAME}"
     
     echo "📥 Downloading Nova Shield binary for ${PLATFORM}..."
     
@@ -145,7 +145,7 @@ install_from_source() {
     
     # Clone repository
     echo "📥 Cloning repository..."
-    git clone "https://github.com/thenovaai/nova-shield.git" "$INSTALL_DIR"
+    git clone "https://github.com/thenovaai/nova-shield-ai.git" "$INSTALL_DIR"
     
     # Verify clone
     if [ ! -d "$INSTALL_DIR" ]; then
@@ -252,7 +252,7 @@ install_npm_package() {
   "files": ["bin/"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/thenovaai/nova-shield.git"
+    "url": "https://github.com/thenovaai/nova-shield-ai.git"
   },
   "keywords": ["ai", "cybersecurity", "cli", "nova"],
   "author": "$NVIA 3SkFJRqMPTKZLqKK1MmY2mvAm711FGAtJ9ZbL6r1coin",

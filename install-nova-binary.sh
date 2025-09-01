@@ -90,6 +90,11 @@ configure_path() {
     
     # Add to current session PATH
     export PATH="$PATH:$BINARY_DIR"
+    # Try to reload shell configuration to make nova available
+    if [ -f "$SHELL_CONFIG" ]; then
+        echo "🔄 Reloading shell configuration..."
+        source "$SHELL_CONFIG" 2>/dev/null || true
+    fi
     echo "✅ PATH updated for current session"
 }
 
@@ -130,6 +135,11 @@ verify() {
     
     # Add to PATH for verification
     export PATH="$PATH:$BINARY_DIR"
+    # Try to reload shell configuration to make nova available
+    if [ -f "$SHELL_CONFIG" ]; then
+        echo "🔄 Reloading shell configuration..."
+        source "$SHELL_CONFIG" 2>/dev/null || true
+    fi
     
     if command -v nova &> /dev/null; then
         echo "✅ Nova command available"
